@@ -11,8 +11,8 @@ defineProps({
     require: true
   }
 })
+ //const clothPart = ref(clothes.part)
 
-// const clothPart = ref(clothes.part)
 </script>
  
 <template>
@@ -21,10 +21,13 @@ defineProps({
     <button @click="$emit('clothObj',clothes)">kuay</button>
     <ul>
       <li v-for="(cloth, index) in clothes" :key="index">
-        cloth Id:{{ cloth.id }} {{ cloth.part }}
-          <img src= {{cloth.part}}> 
+        cloth Id:{{ cloth.id }} {{ cloth.part }} 
+          <img src="{{ cloth.part }}"/> 
+          <img src= "{{urlCloth}}"/>  
+          {{urlCloth}}
       </li>
-      <img src="src/assets/men/topM3.png">
+      <img src="men/topM3.png">
+      <img src="{{ cloth.part[0] }}"/> 
     </ul>
   </div>
 </template>

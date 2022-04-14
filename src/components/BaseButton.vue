@@ -4,13 +4,8 @@ const prop = defineProps({
   yourText: {
     type: String,
     require: true
-  },
-  yourColor: {
-    type: String,
-    require: true
   }
 })
-console.log(prop.yourColor)
 console.log(prop.yourText)
 // when BaseButton want to change yourText or yourColor, you need to create local variable like this:
 // 1. using ref function
@@ -25,7 +20,5 @@ console.log(prop.yourText)
 </template>
 
 <style>
-.button-color {
-  background-color: v-bind(yourColor);
-}
+
 </style>

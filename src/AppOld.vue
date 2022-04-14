@@ -281,7 +281,7 @@ import {ref} from 'vue'
 .tooltip {
   opacity: 0;
   color: #bbb;
-  width: 80px;
+  width: 90px;
   display: block;
   font-size: 12px;
   padding: 5px 8px;

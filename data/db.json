@@ -1,33 +1,44 @@
 {
     "gender": [
       {
-        "men": "src/assets/men/man.png"
+        "man": "src/assets/men/man.png",
+        "manSign": "/public/men/man-sign.png"
       },
       {
-        "women": "src/assets/women/woman.png"
+        "women": "src/assets/women/woman.png",
+        "womenSign": "/public/women/woman-sign.png"
+      }
+    ],
+
+    "human": [
+      {
+        "man": "/public/men/man.png"
+      },
+      {
+        "women": "/public/women/woman.png"
       }
     ],
     
     "topMen": [
       {
         "id": 1,
-        "part": "topM1.png"
+        "part": "men/topM1.png"
       },
       {
         "id": 2,
-        "part": "./assets/men/topM2.png"
+        "part": "men/topM2.png"
       },
       {
         "id": 3,
-        "part": "src/assets/men/topM3.png"
+        "part": "men/topM3.png"
       },
       {
         "id": 4,
-        "part": "src/assets/men/topM4.png"
+        "part": "men/topM4.png"
       },
       {
         "id": 5,
-        "part": "src/assets/men/topM5.png"
+        "part": "men/topM5.png"
       }
     ],
 
@@ -157,10 +168,10 @@
 
     "music": [
       {
-        "play": "src/assets/play.png"
+        "play": "/src/assets/play.png"
       },
       {
-        "pause": "src/assets/pause.png"
+        "pause": "/src/assets/pause.png"
       },
       {
         "playList": "https://www.youtube.com/watch?v=ofM9uCIG4Y0&ab_channel=HitsEveryday"
