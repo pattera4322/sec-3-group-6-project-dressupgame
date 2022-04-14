@@ -18,7 +18,7 @@ import { useRoute, useRouter } from 'vue-router'
        console.log(genders.value);
       } 
   }  
-  const sex = ref(whatGender? genders.map(x => x=man) : genders.map(x => x=woman))
+  const sex = ref(whatGender? genders.man : genders.women)
   console.log(sex);
 
   //startButton
@@ -30,8 +30,8 @@ import { useRoute, useRouter } from 'vue-router'
   let { params } = useRoute()
   console.log(params.noteId)
   const appRouter = useRouter()
-  const goBack = () => appRouter.go(-1)
-  const goToDressup = () => appRouter.push({ name: 'Play' })
+//   const goBack = () => appRouter.go(-1)
+  const goToDressup = () => appRouter.push(whatGender == false? { name: 'Women' }: { name: 'Men'})
 
   const musicOn = ref(true)
   const getMusic = ref([])
@@ -57,12 +57,12 @@ import { useRoute, useRouter } from 'vue-router'
 
     <!--choose gender-->
     <span class="tooltip-container">
-      <img :src="genders.man" class="tran" width="300" height="300" @click="whatGender = true , startButton = true">
+      <img v-bind:src='genders.man'  class="tran" width="300" height="300" @click="whatGender = true , startButton = true">
       <span class="tooltip">man</span>
     </span>
     
     <span class="tooltip-container">
-      <img :src="genders.women" class="tran" width="300" height="300" @click="whatGender = false , startButton = true">
+      <img v-bind="genders.women" class="tran" width="300" height="300" @click="whatGender = false , startButton = true">
       <span class="tooltip">woman</span>
     </span>
     <!-- <span class="tooltip-container">
@@ -82,7 +82,7 @@ import { useRoute, useRouter } from 'vue-router'
      <div class="input-group mb-2">
        <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">        
-             <img :src="genders.manSign" width="24" height="24">
+             <img v-bind:src="genders.manSign" width="24" height="24">
            </span>
        </div>
       <input v-model="name" type="text" class="col-xs-2" placeholder="Your's name" aria-label="Username" aria-describedby="basic-addon1">
@@ -93,7 +93,7 @@ import { useRoute, useRouter } from 'vue-router'
       <div class="input-group mb-2">
        <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">        
-             <img :src="genders.womenSign" width="24" height="24">
+             <img v-bind:src="genders.womenSign" width="24" height="24">
            </span>
        </div >
       <input v-model="name" type="text" class="col-xs-2" placeholder="Your's name" aria-label="Username" aria-describedby="basic-addon1">
@@ -101,22 +101,47 @@ import { useRoute, useRouter } from 'vue-router'
     </div>
 
     <!--start button-->
-    <router-link :to="{ name: 'Play' , params: {whatGender:whatGender}}"><BaseButton yourText="START"/></router-link>
-    <!-- <BaseButton yourText="START" [routerLink]="['Play', whatGender]"/> -->
+    <!-- <router-link :to="{ name: 'Play' , params: {whatGender: sex}}">START</router-link> loop -->
+    <!-- <BaseButton yourText="START" [routerLink]="['Play', whatGender]"/> loop -->
     <!-- <button @click="goToDressup">START</button> -->
-      <!-- <button type="button" class="btn-hover color-6" @click="dressup = true,firstPage = false" id = "buttonStart">START</button> -->
+      <BaseButton yourText="START" class="btn-hover color-6" @click="goToDressup" id = "buttonStart"/>
     </div>
-  </div>
-
+ 
   <!--music button-->
   <!-- :class="musicOn == true? musicPause : musicPlay"  -->
-  <div 
-  @click="playMusic(!musicOn), musicOn == true? musicOn = false : musicOn = true">
-    <img :src="musicOn == true ? play : pause" width="50" height="50"> 
+    <div 
+        @click="playMusic(!musicOn), musicOn == true? musicOn = false : musicOn = true">
+        <img :src="musicOn == true ? play : pause" width="50" height="50"> 
+    </div>
 </div>
-
 </template>
  
-<style>
-
+ <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Playfair+Display:wght@800&display=swap');
+    .block{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .block :hover{
+        width:340px;
+        height:330px;
+        transition: 0.6s;
+    }
+    
+    h1 {
+   font-family: 'Playfair Display', serif;
+  }
+    h3 {
+    font-family: 'Hahmlet', serif;
+  }
+    .body {
+    text-align: center;
+    background-image: 
+    radial-gradient(at 1% 17%, #f3d1f4, transparent 50%),
+    radial-gradient(at 80% 10%, #f5fcc1, transparent 50%),
+    radial-gradient(at 90% 90%, #bae5e5, transparent 50%),
+    radial-gradient(at 14% 91%, #98d6ea, transparent 50%);
+    /* background-attachment: fixed; */
+    height: 100vh;
+    }
 </style>

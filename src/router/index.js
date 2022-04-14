@@ -1,25 +1,40 @@
+import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 import Finish from '../views/Finish.vue'
+import Men from '../views/Men.vue'
+import Women from '../views/Women.vue'
 import Play from '../views/Play.vue'
+import Home from '../views/Home.vue'
 
 const history = createWebHistory()
 const routes = [
-    { 
-      path: '/', 
-      name: 'Home', 
-      component: Home 
-    },
+
     { 
       path: '/Finish', 
       name: 'Finish', 
       component: Finish
     },
     { 
-      path: '/Play/:whatGender', 
+      path: '/Men', 
+      name: 'Men', 
+      component: Men
+    },
+    { 
+      path: '/Women', 
+      name: 'Women', 
+      component: Women
+    },
+    { 
+      path: '/Play', 
       name: 'Play', 
       component: Play
+    },
+    { 
+      path: '/Home', 
+      name: 'Home', 
+      component: Home
     }
+    
   
 ]
   

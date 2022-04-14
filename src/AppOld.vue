@@ -125,10 +125,10 @@ import {ref} from 'vue'
       <div><button type="button" class="btn-hover color-8" @click="sex === 'men'? random(shoesMen,2):random(shoesWomen,2)">SHOES</button></div>
   </div>
 </div>
-  
+</div>  
 </template>
  
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Playfair+Display:wght@800&display=swap');
   h1 {
    font-family: 'Playfair Display', serif;

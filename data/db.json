@@ -1,24 +1,25 @@
 {
-    "gender": [
-      {
-        "man": "src/assets/men/man.png",
-        "manSign": "/public/men/man-sign.png"
-      },
-      {
-        "women": "src/assets/women/woman.png",
-        "womenSign": "/public/women/woman-sign.png"
-      }
-    ],
+  "gender": [
+    {
+      "man": "men/man.png",
+      "manSign": "men/man-sign.png"
+    },
+    {
+      "women": "women/women.png",
+      "womenSign": "women/women-sign.png"
+    }
+  ],
 
-    "human": [
-      {
-        "man": "/public/men/man.png"
-      },
-      {
-        "women": "/public/women/woman.png"
-      }
-    ],
-    
+  "human": [
+    {
+      "man": "men/man.png"
+    },
+    {
+      "women": "women/woman.png"
+    }
+  ],
+
+  "clothes": {
     "topMen": [
       {
         "id": 1,
@@ -45,136 +46,127 @@
     "bottomMen": [
       {
         "id": 1,
-        "part": "src/assets/men/bottomM1.png"
+        "part": "men/bottomM1.png"
       },
       {
         "id": 2,
-        "part": "src/assets/men/bottomM2.png"
+        "part": "men/bottomM2.png"
       },
       {
         "id": 3,
-        "part": "src/assets/men/bottomM3.png"
+        "part": "men/bottomM3.png"
       },
       {
         "id": 4,
-        "part": "src/assets/men/bottomM4.png"
+        "part": "men/bottomM4.png"
       },
       {
         "id": 5,
-        "part": "src/assets/men/bottomM5.png"
-      }
-    ],
-    
-    "shoesMen": [
-      {
-        "id": 1,
-        "part": "src/assets/men/shoeM1.png"
-      },
-      {
-        "id": 2,
-        "part": "src/assets/men/shoeM2.png"
-      },
-      {
-        "id": 3,
-        "part": "src/assets/men/shoeM3.png"
-      },
-      {
-        "id": 4,
-        "part": "src/assets/men/shoeM4.png"
-      },
-      {
-        "id": 5,
-        "shoe": "src/assets/men/shoeM5.png"
-      }
-    ],
-    
-     "topWomen": [
-      {
-        "id": 1,
-        "part": "src/assets/women/topW1.png"
-      },
-      {
-        "id": 2,
-        "part": "src/assets/women/topW2.png"
-      },
-      {
-        "id": 3,
-        "part": "src/assets/women/topW3.png"
-      },
-      {
-        "id": 4,
-        "part": "src/assets/women/topW4.png"
-      },
-      {
-        "id": 5,
-        "part": "src/assets/women/topW5.png"
-      }
-    ],
-    
-    "bottomWomen": [
-      {
-        "id": 1,
-        "part": "src/assets/women/bottomW1.png"
-      },
-      {
-        "id": 2,
-        "part": "src/assets/women/bottomW2.png"
-      },
-      {
-        "id": 3,
-        "part": "src/assets/women/bottomW3.png"
-      },
-      {
-        "id": 4,
-        "part": "src/assets/women/bottomW4.png"
-      },
-      {
-        "id": 5,
-        "part": "src/assets/women/bottomW5.png"
-      }
-    ],
-    
-    "shoesWomen": [
-      {
-        "id": 1,
-        "part": "src/assets/women/shoeW1.png"
-      },
-      {
-        "id": 2,
-        "part": "src/assets/women/shoeW2.png"
-      },
-      {
-        "id": 3,
-        "part": "src/assets/women/shoeW3.png"
-      },
-      {
-        "id": 4,
-        "part": "src/assets/women/shoeW4.png"
-      },
-      {
-        "id": 5,
-        "part": "src/assets/women/shoeW5.png"
-      }
-    ],
-    
-    "wear": [
-      {
-        "gender": "",
-        "Top": "",
-        "bottom": "",
-        "shoe": ""
+        "part": "men/bottomM5.png"
       }
     ],
 
-    "music": [
+    "shoesMen": [
       {
-        "play": "/src/assets/play.png"
+        "id": 1,
+        "part": "men/shoeM1.png"
       },
       {
-        "pause": "/src/assets/pause.png"
+        "id": 2,
+        "part": "men/shoeM2.png"
       },
       {
-        "playList": "https://www.youtube.com/watch?v=ofM9uCIG4Y0&ab_channel=HitsEveryday"
+        "id": 3,
+        "part": "men/shoeM3.png"
+      },
+      {
+        "id": 4,
+        "part": "men/shoeM4.png"
+      },
+      {
+        "id": 5,
+        "part": "men/shoeM5.png"
+      }
+    ],
+
+    "topWomen": [
+      {
+        "id": 1,
+        "part": "women/topW1.png"
+      },
+      {
+        "id": 2,
+        "part": "women/topW2.png"
+      },
+      {
+        "id": 3,
+        "part": "women/topW3.png"
+      },
+      {
+        "id": 4,
+        "part": "women/topW4.png"
+      },
+      {
+        "id": 5,
+        "part": "women/topW5.png"
+      }
+    ],
+
+    "bottomWomen": [
+      {
+        "id": 1,
+        "part": "women/bottomW1.png"
+      },
+      {
+        "id": 2,
+        "part": "women/bottomW2.png"
+      },
+      {
+        "id": 3,
+        "part": "women/bottomW3.png"
+      },
+      {
+        "id": 4,
+        "part": "women/bottomW4.png"
+      },
+      {
+        "id": 5,
+        "part": "women/bottomW5.png"
+      }
+    ],
+
+    "shoesWomen": [
+      {
+        "id": 1,
+        "part": "women/shoeW1.png"
+      },
+      {
+        "id": 2,
+        "part": "women/shoeW2.png"
+      },
+      {
+        "id": 3,
+        "part": "women/shoeW3.png"
+      },
+      {
+        "id": 4,
+        "part": "women/shoeW4.png"
+      },
+      {
+        "id": 5,
+        "part": "women/shoeW5.png"
       }
     ]
-  }
+  },
+  "music": [
+    {
+      "play": "play.png"
+    },
+    {
+      "pause": "pause.png"
+    },
+    {
+      "playList": "song.mp3"
+    }
+  ]
+}

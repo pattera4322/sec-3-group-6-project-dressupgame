@@ -1,11 +1,90 @@
-<script setup>
-
+ 
+ <script setup>
+ 
 </script>
- 
-<template>
+  
+ <template>
+    <div class="body">
+        <h1>Welcome! Don't know what to wear</h1>
+        <h3>First, choose your gender!!</h3><br>
+        <span class="block">
+        <router-link :to="{ name: 'Men' }">
+            <img src="men/man-button.png" width="300" height="300">
+            <span class="tooltip">man</span>
+        </router-link>
+        </span>
 
+        <span class="block">
+        <router-link :to="{ name: 'Women' }">
+            <img src="women/women-button.png"  width="300" height="300">
+            <span class="tooltip">woman</span>
+        </router-link>
+        </span>
+        
+    </div>
 </template>
+  
+ <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Playfair+Display:wght@800&display=swap');
+    .block{
+        margin-left: 80px;
+        margin-right: 80px;
+        position: relative;
+    }
+    .block :hover{
+        width:340px;
+        height:330px;
+        transition: 0.6s;
+    }
+    
+    h1 {
+   font-family: 'Playfair Display', serif;
+   
+  }
+    h3 {
+    font-family: 'Hahmlet', serif;
+  }
+
  
-<style scoped>
+  .tooltip {
+  opacity: 0;
+  color: #bbb;
+  width: 90px;
+  display: block;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #111;
+  background: #2f2f2f;
+  border: 1px solid black;
+  box-shadow: 0 0 3px black;
+  position: absolute;
+  right: 200px;
+  bottom: 150px;
+}
+
+tooltip:before,
+.tooltip:after {
+  content: '';
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2f2f2f;
+  position: absolute;
+  bottom: -10px;
+  left: 43%;
+}
+
+a:hover .tooltip {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+} 
 
 </style>
+ 
+ 
+ 
