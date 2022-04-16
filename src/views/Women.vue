@@ -1,18 +1,19 @@
 <script setup>
-import { ref, onBeforeMount , computed } from 'vue'
-import ClothList from '../components/ClothList.vue'
+import { ref, onBeforeMount, computed } from "vue";
+import ClothList from "../components/ClothList.vue";
 
-
-const clothJson = ref([])
+const clothJson = ref([]);
 const getclothList = async () => {
-    const res = await fetch(`http://localhost:5000/clothes`)
-    if (res.status === 200) {
-        clothJson.value = await res.json()
-        console.log(clothJson.value)
-    } else { console.log("error kuay") }
-}
+  const res = await fetch(`http://localhost:5000/clothes`);
+  if (res.status === 200) {
+    clothJson.value = await res.json();
+    console.log(clothJson.value);
+  } else {
+    console.log("error kuay");
+  }
+};
 onBeforeMount(async () => {
-    await getclothList()
+  await getclothList();
 });
 
 //CREATE
@@ -33,31 +34,68 @@ onBeforeMount(async () => {
   }
 };*/
 
-let top = ref("")
-let bottom = ref("")
-let shoe = ref("")
-const clickTop = (e) => {top.value = e}
-const clickBottom = (e) => bottom.value = e
-const clickShoes = (e) => shoe.value = e
-
+let top = ref("");
+let bottom = ref("");
+let shoe = ref("");
+const clickTop = (e) => {
+  top.value = e;
+};
+const clickBottom = (e) => (bottom.value = e);
+const clickShoes = (e) => (shoe.value = e);
 </script>
- 
-<template>
-    <div class="body">
-        <h1>Jim ./.</h1>
-        <img src="women/women.png" width="600" height="600">
-        <img v-if="top != null" v-bind:src="top" >
-        <img v-if="bottom != null" v-bind:src="bottom" >
-        <img v-if="shoe != null" v-bind:src="shoe" >
 
-        <div>
-            <h2>Wardrobe</h2>
-            <ClothList :clothes='clothJson.topWomen' @clothObj="clickTop"/>
-            <ClothList :clothes='clothJson.bottomWomen' @clothObj="clickBottom"/>
-            <ClothList :clothes='clothJson.shoesWomen' @clothObj="clickShoes"/>
-        </div>
+<template>
+  <div class="body">
+    <h1>Jim ./.</h1>
+    <img class="women" src="women/women.png" width="600" height="600" />
+    <img v-if="bottom != null" v-bind:src="bottom" id="bottom" />
+    <img v-if="shoe != null" v-bind:src="shoe" id="shoe" />
+     <img v-if="top != null" v-bind:src="top" id="top" />
+
+    <div class="wardrode">
+      <h2>Wardrobe</h2>
+      <ClothList :clothes="clothJson.topWomen" @clothObj="clickTop" />
+      <ClothList :clothes="clothJson.bottomWomen" @clothObj="clickBottom" />
+      <ClothList :clothes="clothJson.shoesWomen" @clothObj="clickShoes" />
     </div>
+  </div>
 </template>
- 
+
 <style scoped>
+.women {
+  position: absolute;
+  z-index: 99;
+  top: 15%;
+  right: 60%;
+}
+#top {
+  position: absolute;
+  z-index: 99;
+  top: 15%;
+  right: 60%;
+  width: 600px;
+  height: 600px;
+}
+#bottom {
+  position: absolute;
+  z-index: 99;
+  bottom: 23%;
+  right: 60%;
+  width: 600px;
+  height: 600px;
+}
+#shoe {
+  position: absolute;
+  z-index: 99;
+  bottom: 22.5%;
+  right: 60%;
+  width: 600px;
+  height: 600px;
+}
+.wardrode {
+  position: absolute;
+  z-index: 99;
+  top: 15%;
+  left: 40%;
+}
 </style>
