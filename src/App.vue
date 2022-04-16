@@ -14,14 +14,15 @@ import { ref,onBeforeMount } from 'vue'
 <template>
   <div class="body">
     <div v-if="$route.path == '/'">
-    <router-link :to="{ name: 'Play' }">
-      <div class="center">
-        <img src="PlayGame.png" width="100" height="100">
-      </div>
-     </router-link>
-    
+      <router-link :to="{ name: 'Play' }">
+        <div class="center">
+          <img src="PlayGame.png" width="100" height="100">
+        </div>
+      </router-link>
     </div>
-    <router-view> </router-view>
+
+    <router-view></router-view>
+    
     <div :class="musicOn == true? musicPause : musicPlay" 
     @click="playMusic(!musicOn), musicOn == true? musicOn = false : musicOn = true">
     <img :src="musicOn == true ? play : pause" class="music"> 
@@ -29,7 +30,7 @@ import { ref,onBeforeMount } from 'vue'
   </div>
 </template>
  
-<style >
+<style scoped>
 .center {
   padding-top: 300px;
   text-align: center;
@@ -51,5 +52,6 @@ import { ref,onBeforeMount } from 'vue'
     radial-gradient(at 14% 91%, #98d6ea, transparent 50%);
     /* background-attachment: fixed; */
     height: 100vh;
+
     }
 </style>

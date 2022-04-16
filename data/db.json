@@ -9,7 +9,6 @@
       "womenSign": "women/women-sign.png"
     }
   ],
-
   "human": [
     {
       "man": "men/man.png"
@@ -18,7 +17,6 @@
       "women": "women/woman.png"
     }
   ],
-
   "clothes": {
     "topMen": [
       {
@@ -42,7 +40,6 @@
         "part": "men/topM5.png"
       }
     ],
-
     "bottomMen": [
       {
         "id": 1,
@@ -65,7 +62,6 @@
         "part": "men/bottomM5.png"
       }
     ],
-
     "shoesMen": [
       {
         "id": 1,
@@ -88,7 +84,6 @@
         "part": "men/shoeM5.png"
       }
     ],
-
     "topWomen": [
       {
         "id": 1,
@@ -111,7 +106,6 @@
         "part": "women/topW5.png"
       }
     ],
-
     "bottomWomen": [
       {
         "id": 1,
@@ -134,7 +128,6 @@
         "part": "women/bottomW5.png"
       }
     ],
-
     "shoesWomen": [
       {
         "id": 1,
@@ -168,5 +161,15 @@
     {
       "playList": "song.mp3"
     }
+  ],
+  "Add": [
+    [
+      {
+        "sex": "women/women.png",
+        "finTop": "women/topW1.png",
+        "finBot": "women/bottomW4.png",
+        "finShoes": "women/shoeW4.png"
+      }
+    ]
   ]
 }

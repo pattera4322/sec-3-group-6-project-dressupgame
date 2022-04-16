@@ -4,7 +4,7 @@ import Finish from '../views/Finish.vue'
 import Men from '../views/Men.vue'
 import Women from '../views/Women.vue'
 import Play from '../views/Play.vue'
-import Home from '../views/Home.vue'
+
 
 const history = createWebHistory()
 const routes = [
@@ -28,13 +28,7 @@ const routes = [
       path: '/Play', 
       name: 'Play', 
       component: Play
-    },
-    { 
-      path: '/Home', 
-      name: 'Home', 
-      component: Home
     }
-    
   
 ]
   

@@ -1,7 +1,11 @@
 <script setup>
 import { ref, onBeforeMount, computed } from "vue";
 import ClothList from "../components/ClothList.vue";
+import BaseButton from "../components/BaseButton.vue";
+// import createCloth from "../components/createCloth.vue";
 
+
+const sex = "women/women.png";
 const clothJson = ref([]);
 const getclothList = async () => {
   const res = await fetch(`http://localhost:5000/clothes`);
@@ -16,41 +20,42 @@ onBeforeMount(async () => {
   await getclothList();
 });
 
-//CREATE
-/*const createNewNote = async (newNote) => {
-  const res = await fetch("http://localhost:5001/notes", {
-    method: "POST",
+const createClothes = async (sex,top,bottom,shoe) => {
+  console.log('success')
+  const res = await fetch(`http://localhost:5000/Add`,{
+    method: 'POST',
     headers: {
-      "content-type": "application/json",
+      'content-type': 'application/json'
     },
-    body: JSON.stringify({ noteDetail: newNote }),
-  });
+    body: JSON.stringify({sex: sex,finTop: top,finBot: bottom,finShoes: shoe})
+
+  })
   if (res.status === 201) {
-    const addedNote = await res.json();// <--- ทำเพื่อให้เมื่อกดลบแล้วให้ front end เปลี่ยนการแสดงผลไปด้วย
-    notes.value.push(addedNote);// <--- ทำเพื่อให้เมื่อกดลบแล้วให้ front end เปลี่ยนการแสดงผลไปด้วย
-    console.log("Created successfully");
-  } else {
-    console.log("error,cannot create");
-  }
-};*/
+    const finishedCloth = await res.json()
+    clothJson.value.push(finishedCloth)
+    console.log('added sucessfully')
+  } else console.log('error, cannot be added')
+} 
 
 let top = ref("");
 let bottom = ref("");
 let shoe = ref("");
-const clickTop = (e) => {
-  top.value = e;
-};
+const clickTop = (e) => (top.value = e);
 const clickBottom = (e) => (bottom.value = e);
 const clickShoes = (e) => (shoe.value = e);
+
+
 </script>
 
 <template>
   <div class="body">
-    <h1>Jim ./.</h1>
+    <h1>Women Dress up</h1>
     <img class="women" src="women/women.png" width="600" height="600" />
-    <img v-if="bottom != null" v-bind:src="bottom" id="bottom" />
-    <img v-if="shoe != null" v-bind:src="shoe" id="shoe" />
-     <img v-if="top != null" v-bind:src="top" id="top" />
+    <div>   
+      <img :class="bottom != ``? 'enable':'disable'" v-bind:src="bottom" id="bottom"/>
+      <img :class="shoe != ``? 'enable':'disable'" v-bind:src="shoe" id="shoe"/>
+      <img :class="top != ``? 'enable':'disable'" v-bind:src="top" id="top"/>
+    </div>
 
     <div class="wardrode">
       <h2>Wardrobe</h2>
@@ -58,6 +63,11 @@ const clickShoes = (e) => (shoe.value = e);
       <ClothList :clothes="clothJson.bottomWomen" @clothObj="clickBottom" />
       <ClothList :clothes="clothJson.shoesWomen" @clothObj="clickShoes" />
     </div>
+
+    <router-link :to="{ name: 'Finish' }">
+      <!-- <createCloth @createCloth="createClothes" /> -->
+      <BaseButton yourText="Finish" @click="createClothes(sex,top,bottom,shoe)"/>
+    </router-link>
   </div>
 </template>
 
@@ -97,5 +107,11 @@ const clickShoes = (e) => (shoe.value = e);
   z-index: 99;
   top: 15%;
   left: 40%;
+}
+.disable {
+    display: none;
+}
+.enable {
+    display: inline;
 }
 </style>
