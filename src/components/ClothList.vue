@@ -22,9 +22,9 @@ defineProps({
 </script>
  
 <template>
-  <div id="cloth">
-      <span v-for="(cloth, index) in clothes" :key="index">
-         <img v-bind:src="cloth.part" @click="$emit('clothObj',cloth.part)"> 
+  <div id="cloth" class="scroll">
+      <span v-for="(cloth, index) in clothes" :key="index" class="clip">
+         <img v-bind:src="cloth.part" class="clothes" @click="$emit('clothObj',cloth.part)"> 
       </span>
   </div>
 </template>
@@ -36,20 +36,62 @@ defineProps({
     object-fit: cover;
   }
 
-  .colth{
+
+  #cloth{
+    border-style: solid;
+    border-radius: 20px;
     display: flex;
     overflow-x: scroll;
+    overflow-y: hidden ;
     max-width: 50rem;
     margin: 0 auto;
-    background-color: blanchedalmond;
+     position: relative;
+    height: 225px;
+    scrollbar-color: rgb(193, 114, 134) rgb(170, 166, 166);
+    margin-bottom: 15px;
+
   }
 
-  .colth span img{
+.scroll::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(120 100% 10% / 1);
+}
+
+
+/* Track */
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.scroll::-webkit-scrollbar-thumb {
+  background: rgb(187, 148, 20)(255, 238, 0); 
+  border-radius: 10px;
+}
+  /* #cloth span img{
     border-radius: 8px;
     background-color: white;
     background: transparent 50%;
     padding: 2rem 3rem;
     margin: 2rem 1rem;
+  } */
+
+  .clothes{
+ 
+    width: 240px;
+    height: 240px;
+
+  }
+
+  .clothes:hover{
+    width:280px;
+    height:280px;
+    transition: 0.6s;
+    z-index: 200;
   }
 
 </style>

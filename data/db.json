@@ -163,13 +163,19 @@
     }
   ],
   "Add": [
-    [
-      {
-        "sex": "women/women.png",
-        "finTop": "women/topW1.png",
-        "finBot": "women/bottomW4.png",
-        "finShoes": "women/shoeW4.png"
-      }
-    ]
+    {
+      "sex": "men/man.png",
+      "finTop": "men/topM3.png",
+      "finBot": "men/bottomM3.png",
+      "finShoes": "men/shoeM3.png",
+      "id": 4
+    },
+    {
+      "sex": "men/man.png",
+      "finTop": "men/topM1.png",
+      "finBot": "men/bottomM1.png",
+      "finShoes": "men/shoeM2.png",
+      "id": 6
+    }
   ]
 }

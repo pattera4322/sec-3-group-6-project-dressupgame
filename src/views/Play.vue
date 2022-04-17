@@ -5,7 +5,7 @@
   
  <template>
     <div class="body">
-        <h1>Welcome! Don't know what to wear</h1>
+        <h1>Welcome!</h1>
         <h3>First, choose your gender!!</h3><br>
 
         <span class="block">
@@ -33,6 +33,10 @@
         position: relative;
     }
 
+     .hoverpic {
+        margin-bottom: 4em;
+      } 
+
     .block :hover .hoverpic {
         width:340px;
         height:330px;
@@ -40,13 +44,18 @@
     }
 
     h1 {
+      font-size: 5em;
+      color: rgb(255, 211, 67);
+      text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
        padding-top: 5% ;
        font-family: 'Playfair Display', serif;
     }
 
     h3 {
-      font-family: 'Hahmlet', serif;
-    }
+      font-size: 2em;
+        font-family: 'Hahmlet', serif;
+        padding-bottom: 1em;
+}
 
     .tooltip {
       opacity: 0;
@@ -63,7 +72,7 @@
       box-shadow: 0 0 3px black;
       position: absolute;
       right: 200px;
-      bottom: 150px;
+      bottom: 180px;
     }
 
   .tooltip:before,
@@ -85,6 +94,9 @@
     -ms-transform: scale(1);
     transform: scale(1);
   } 
+  .body{
+  background-image: url("star.gif");
+}
 
 </style>
  

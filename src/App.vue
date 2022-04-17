@@ -14,34 +14,44 @@ import { ref,onBeforeMount } from 'vue'
 <template>
   <div class="body">
     <div v-if="$route.path == '/'">
+      <img src="ELsa.png" class="elsa center"/>
       <router-link :to="{ name: 'Play' }">
-        <div class="center">
-          <img src="PlayGame.png" width="100" height="100">
+        <div class="playImg">
+          <img src="PlayGame.png" width="100" height="100" />
         </div>
       </router-link>
     </div>
 
-    <router-view></router-view>
-    
-    <div :class="musicOn == true? musicPause : musicPlay" 
-    @click="playMusic(!musicOn), musicOn == true? musicOn = false : musicOn = true">
-    <img :src="musicOn == true ? play : pause" class="music"> 
-  </div>
+    <div
+      :class="musicOn == true ? musicPause : musicPlay"
+      @click="
+        playMusic(!musicOn),
+          musicOn == true ? (musicOn = false) : (musicOn = true)
+      "
+    >
+      <img :src="musicOn == true ? play : pause" class="music" />
+    </div>
+    <router-view> </router-view>
   </div>
 </template>
  
 <style scoped>
-.center {
-  padding-top: 300px;
-  text-align: center;
+.playImg {
+  height: 85vh;
+  width: inherit;
+  vertical-align: middle;
+  display: table-cell;
+  overflow: auto;
 }
+
 .music {
     width: 80px;
     height: 80px;
-    position: absolute;
-    left: 95%; 
-    top: 90%; 
-    transform:translate(-50%, -50%);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px; 
+    z-index: 999;
 }
  .body {
     text-align: center;
@@ -51,7 +61,12 @@ import { ref,onBeforeMount } from 'vue'
     radial-gradient(at 90% 90%, #bae5e5, transparent 50%),
     radial-gradient(at 14% 91%, #98d6ea, transparent 50%);
     /* background-attachment: fixed; */
+    position: sticky;
     height: 100vh;
-
-    }
+    overflow: auto;
+  }
+  .elsa{
+     width: 1600px;
+    height: 800px;
+  }
 </style>

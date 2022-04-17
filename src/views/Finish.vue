@@ -1,6 +1,7 @@
 <script setup>
-import {ref, onBeforeMount } from 'vue'
+import {ref, onBeforeMount , onMounted} from 'vue'
 import FinishClothes from "../components/FinishCloth.vue";
+import BaseGoHome from '../components/BaseGoHome.vue';
 
 const finishCloth = ref([]);
 const getclothList = async () => {
@@ -16,8 +17,9 @@ const getclothList = async () => {
 onBeforeMount(async () => {
   await getclothList();
 });
-
-
+onMounted(async () => {
+  await getclothList();
+});
 
 //DELETE
 const removeCloth = async (removeClothId) => {
@@ -35,16 +37,17 @@ const removeCloth = async (removeClothId) => {
  
 <template>
   <div class="body">
-    
     <FinishClothes :finClothes="finishCloth" @delete="removeCloth" />
 
     <router-link :to="{ name: 'Play' }">
         <img id="home" src="Homie.png" @click="removeCloth(currentId)">
     </router-link>
   </div>
+  <BaseGoHome/>
 </template> 
  
 <style scoped>
+
 .men{
     position: absolute;
     z-index: 9;
@@ -82,5 +85,8 @@ const removeCloth = async (removeClothId) => {
 }
 .enable{
     display: inline;
+}
+#home {
+  z-index: 104;
 }
 </style>
