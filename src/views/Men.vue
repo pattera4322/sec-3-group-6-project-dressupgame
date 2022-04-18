@@ -29,6 +29,9 @@ const createClothes = async (sex,top,bottom,shoe) => {
     },
     body: JSON.stringify({sex: sex,finTop: top,finBot: bottom,finShoes: shoe})
   })
+   if (clothJson.value == null){
+    clothJson.value.push('empty.png')
+  }
   if (res.status === 201) {
     const finishedCloth = await res.json()
     clothJson.value.push(finishedCloth)
@@ -36,9 +39,9 @@ const createClothes = async (sex,top,bottom,shoe) => {
   } else console.log('error, cannot be added')
 }
 
-let top = ref("");
-let bottom = ref("");
-let shoe = ref("");
+let top = ref("empty.png");
+let bottom = ref("empty.png");
+let shoe = ref("empty.png");
 const clickTop = (e) => (top.value = e);
 const clickBottom = (e) => (bottom.value = e);
 const clickShoes = (e) => (shoe.value = e);
@@ -109,8 +112,8 @@ const clickShoes = (e) => (shoe.value = e);
   border: none;
   height: 40px;
   position: absolute;
-  top: 70%;
-  left: 16%;
+  top: 80%;
+  left:280px;
   z-index: 99;
 }
 .men{

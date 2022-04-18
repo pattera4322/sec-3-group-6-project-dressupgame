@@ -31,8 +31,8 @@ defineProps({
  
 <style scoped>
   img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
   }
 
@@ -45,11 +45,10 @@ defineProps({
     overflow-y: hidden ;
     max-width: 50rem;
     margin: 0 auto;
-     position: relative;
+    position: relative;
     height: 225px;
     scrollbar-color: rgb(193, 114, 134) rgb(170, 166, 166);
     margin-bottom: 15px;
-
   }
 
 .scroll::-webkit-scrollbar {
@@ -64,12 +63,12 @@ defineProps({
 /* Track */
 .scroll::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
+  border-radius: 50px;
 }
  
 /* Handle */
 .scroll::-webkit-scrollbar-thumb {
-  background: rgb(187, 148, 20)(255, 238, 0); 
+  background: rgb(27, 109, 0); 
   border-radius: 10px;
 }
   /* #cloth span img{
@@ -81,10 +80,11 @@ defineProps({
   } */
 
   .clothes{
- 
-    width: 240px;
-    height: 240px;
-
+    width: 200px;
+    height: 200px;
+    position: relative;
+    padding-top: 10px;
+    bottom: 50px;
   }
 
   .clothes:hover{
@@ -93,5 +93,5 @@ defineProps({
     transition: 0.6s;
     z-index: 200;
   }
-
+  
 </style>

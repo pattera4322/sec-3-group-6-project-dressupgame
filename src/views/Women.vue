@@ -23,13 +23,13 @@ onBeforeMount(async () => {
 
 const createClothes = async (sex,top,bottom,shoe) => {
   console.log('success')
+ 
   const res = await fetch(`http://localhost:5000/Add`,{
     method: 'POST',
     headers: {
       'content-type': 'application/json'
     },
     body: JSON.stringify({sex: sex,finTop: top,finBot: bottom,finShoes: shoe})
-
   })
   if (res.status === 201) {
     const finishedCloth = await res.json()
@@ -38,9 +38,9 @@ const createClothes = async (sex,top,bottom,shoe) => {
   } else console.log('error, cannot be added')
 } 
 
-let top = ref("");
-let bottom = ref("");
-let shoe = ref("");
+let top = ref("empty.png");
+let bottom = ref("empty.png");
+let shoe = ref("empty.png");
 const clickTop = (e) => (top.value = e);
 const clickBottom = (e) => (bottom.value = e);
 const clickShoes = (e) => (shoe.value = e);
@@ -61,8 +61,8 @@ const clickShoes = (e) => (shoe.value = e);
     <div class="wardrode">
       <h2>Wardrobe</h2>
       <ClothList :clothes="clothJson.topWomen" @clothObj="clickTop" />
-      <ClothList :clothes="clothJson.bottomWomen" @clothObj="clickBottom" />
-      <ClothList :clothes="clothJson.shoesWomen" @clothObj="clickShoes" />
+      <ClothList :clothes="clothJson.bottomWomen"  @clothObj="clickBottom" />
+      <ClothList :clothes="clothJson.shoesWomen"  @clothObj="clickShoes" />
     </div>
 
     <router-link :to="{ name: 'Finish' }">
@@ -75,7 +75,6 @@ const clickShoes = (e) => (shoe.value = e);
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap&family=Hahmlet:wght@300');
-
   h1 {
     font-size: 6em;
     font-family: 'Changa One', cursive;
@@ -115,8 +114,8 @@ const clickShoes = (e) => (shoe.value = e);
   border: none;
   height: 40px;
   position:absolute;
-  top: 70%;
-  left:16%;
+  top: 80%;
+  left:280px;
   z-index: 99;
   
 }

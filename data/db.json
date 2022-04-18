@@ -176,6 +176,34 @@
       "finBot": "men/bottomM1.png",
       "finShoes": "men/shoeM2.png",
       "id": 6
+    },
+    {
+      "sex": "women/women.png",
+      "finTop": "women/topW1.png",
+      "finBot": "women/bottomW2.png",
+      "finShoes": "women/shoeW2.png",
+      "id": 7
+    },
+    {
+      "sex": "women/women.png",
+      "finTop": "empty.png",
+      "finBot": "empty.png",
+      "finShoes": "empty.png",
+      "id": 10
+    },
+    {
+      "sex": "men/man.png",
+      "finTop": "empty.png",
+      "finBot": "empty.png",
+      "finShoes": "empty.png",
+      "id": 11
+    },
+    {
+      "sex": "women/women.png",
+      "finTop": "women/topW4.png",
+      "finBot": "women/bottomW1.png",
+      "finShoes": "women/shoeW2.png",
+      "id": 12
     }
   ]
 }
